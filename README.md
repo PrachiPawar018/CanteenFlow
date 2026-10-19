@@ -51,17 +51,8 @@ The linked list validates transitions before changing the authoritative order re
 
 ## Source files
 
-- `src/main.cpp` — menu display, input validation, and switch-based user interaction.
-- `src/Order.h` — declarations for the order node, order status values, and status helper functions.
-- `src/Order.cpp` — definitions for order methods and status helper functions.
-- `src/OrderList.h` / `src/OrderList.cpp` — declarations and implementation of the manually managed master singly linked list, linear search, display, and status updates.
-- `src/OrderQueue.h` / `src/OrderQueue.cpp` — declarations and implementation of the manually managed FIFO linked queue of pending token references.
-- `src/CanteenManager.h` / `src/CanteenManager.cpp` — declarations and implementation of the business rules, persistence, queue reconstruction, timestamps, and daily reports.
+- `src/main.cpp` — the complete program: order records, manually implemented linked list and queue, file handling, business rules, daily report, and menu.
 - `data/.gitkeep` — keeps the runtime-data directory in the repository.
-
-### What are `.h` and `.cpp` files?
-
-A `.h` file is a header. It tells other source files which classes and functions exist (their declarations), so those files can use them. A `.cpp` file contains the function definitions and actual implementation. Headers do not contain or include all the `.cpp` files; instead, include the needed header with `#include "Order.h"` and compile all the project's `.cpp` files together.
 
 ## Requirements
 
@@ -74,7 +65,7 @@ A `.h` file is a header. It tells other source files which classes and functions
 Open PowerShell or the VS Code terminal in the project root:
 
 ```powershell
-g++ -std=c++17 -Wall -Wextra -pedantic src\main.cpp src\Order.cpp src\OrderList.cpp src\OrderQueue.cpp src\CanteenManager.cpp -o CanteenFlow.exe
+g++ -std=c++17 -Wall -Wextra -pedantic src\main.cpp -o CanteenFlow.exe
 .\CanteenFlow.exe
 ```
 
